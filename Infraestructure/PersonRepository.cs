@@ -10,37 +10,17 @@ namespace QueryApi.Repositories
 {
     /*Nombre de la escuela: Universidad Tecnologica Metropolitana
 
-
-     
     Asignatura: Aplicaciones Web Orientadas a Objetos
-
- 
-
 
     Nombre del Maestro: Chuc Uc Joel Ivan
 
- 
-
-
     Nombre de la actividad: Actividad 1
-
- 
-
 
     Nombre del alumno: Fabian Francisco Aguilar Rivero
 
- 
-
-
     Cuatrimestre: 4
 
- 
-
-
     Grupo: B
-
- 
-
 
     Parcial: 2
     */
@@ -59,14 +39,14 @@ namespace QueryApi.Repositories
             }
         }
 
-        //  //EJERCICIO 1
+        //  //EJERCICIO_1
         public IEnumerable<Person> GetAll()
         {
             var query = _persons.Select(person => person);
             return query;
         }
 
-        //  //EJERCICIO 2
+        //  //EJERCICIO_2
         public IEnumerable<Object> GetField(){
             var query = _persons.Select(person => new {
                 NombreCompleto = $"{person.FirstName} {person.LastName}",
@@ -76,14 +56,14 @@ namespace QueryApi.Repositories
             return query;
         }
 
-        //  //EJERCICIO 3
+        //  //EJERCICIO_3
         public IEnumerable<Person> GetByGender(char Letra){
             //var gender = 'M';
             var query = _persons.Where(person => person.Gender == Letra);
             return query;
         }
 
-          //EJERCICIO 4
+          //EJERCICIO_4
        
         public IEnumerable<Person> GetByRangeAge(int Edad1, int Edad2){
            // var minage = 30;
@@ -92,13 +72,13 @@ namespace QueryApi.Repositories
             return query;
         }
         
-         //EJERCICIO 5
+         //EJERCICIO_5
          public IEnumerable<string> GetJobs(){
             var query = _persons.Select(person => person.Job).Distinct();
             return query;
         }
 
-         //  //EJERCICIO 6
+         //  //EJERCICIO_6
         public IEnumerable<Person> GetContains(string ParteNombre){
             //var partName = "ar";
             var query = _persons.Where(person => person.FirstName.Contains(ParteNombre));
@@ -106,7 +86,7 @@ namespace QueryApi.Repositories
         }
 
 
-         //EJERCICIO 7
+         //EJERCICIO_7
           public IEnumerable<Person> GetByAger(int Edad1, int Edad2, int Edad3){
             var ages = new List<int>{ Edad1,  Edad2,  Edad3};
             var query = _persons.Where(person => ages.Contains(person.Age));
@@ -114,14 +94,14 @@ namespace QueryApi.Repositories
         }
        
 
-        //EJERCICIO 8
+        //EJERCICIO_8
         public IEnumerable<Person> GetByMaxAge(int Edad){
             //var age = 30;
             var query = _persons.Where(person => person.Age <= Edad);
             return query;
         }
 
-        //EJERCICIO 9
+        //EJERCICIO_9
 
           public IEnumerable<Person> GetPersonsOrdered(int edad){
             //var job = "Payment Adjustment Coordinator";
@@ -131,7 +111,7 @@ namespace QueryApi.Repositories
             return query;
         }
 
-         //EJERCICIO 10
+         //EJERCICIO_10
 
         public IEnumerable<Person> GetPersonsOrderedDesc(int EdadMax, int EdadMin){
         var genero = 'M';
@@ -141,7 +121,7 @@ namespace QueryApi.Repositories
 
         }
 
-         //EJERCICIO 11
+         //EJERCICIO_11
 
           public int CountPerson(char gender)
         {
@@ -150,7 +130,7 @@ namespace QueryApi.Repositories
             return query;
         }
 
-         //EJERCICIO 12
+         //EJERCICIO_12
 
           public bool ExistPerson(string Apellido)
         {
@@ -159,7 +139,7 @@ namespace QueryApi.Repositories
             return query;
         }
 
-        //EJERCICIO 13
+        //EJERCICIO_13
 
          public Person GetPerson(string job, int Age)
         {
@@ -168,7 +148,7 @@ namespace QueryApi.Repositories
             return query;
         }
 
-        //EJERCICIO 14
+        //EJERCICIO_14
 
          public IEnumerable<Person> TakePerson(string job)
         {
@@ -178,7 +158,7 @@ namespace QueryApi.Repositories
             return query;
         }
 
-        //EJERCICIO 15
+        //EJERCICIO_15
 
           public IEnumerable<Person> SkipPerson(string job)
         {
@@ -188,7 +168,7 @@ namespace QueryApi.Repositories
             return query;
         }
 
-         //EJERCICIO 16
+         //EJERCICIO_16
         public IEnumerable<Person> SkipTakePerson(string job)
         {
             //var job = "Professor";
@@ -197,8 +177,6 @@ namespace QueryApi.Repositories
             var query = _persons.Where(person => person.Job == job).Skip(skip).Take(take);
             return query;
         }
-
-
 
     }
 }
