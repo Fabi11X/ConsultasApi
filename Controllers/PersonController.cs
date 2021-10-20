@@ -8,37 +8,17 @@ namespace Controllers
 
     /*Nombre de la escuela: Universidad Tecnologica Metropolitana
 
-
-     
     Asignatura: Aplicaciones Web Orientadas a Objetos
-
- 
-
 
     Nombre del Maestro: Chuc Uc Joel Ivan
 
- 
-
-
     Nombre de la actividad: Actividad 1
-
- 
-
 
     Nombre del alumno: Fabian Francisco Aguilar Rivero
 
- 
-
-
     Cuatrimestre: 4
 
- 
-
-
     Grupo: B
-
- 
-
 
     Parcial: 2
     */
@@ -48,7 +28,7 @@ namespace Controllers
     public class PersonController : ControllerBase
     {
         [HttpGet]
-        [Route("EJERCICIO 1")]
+        [Route("EJERCICIO_1")]
         public IActionResult GetAll()
         {
             var repository = new PersonRepository();
@@ -57,7 +37,7 @@ namespace Controllers
         } 
 
         [HttpGet]
-        [Route("EJERCICIO 2")]
+        [Route("EJERCICIO_2")]
         public IActionResult GetField()
         {
             var repository = new PersonRepository();
@@ -66,7 +46,7 @@ namespace Controllers
         } 
 
         [HttpGet]
-        [Route("EJERCICIO 3")]
+        [Route("EJERCICIO_3")]
         public IActionResult GetByGender(char Letra)
         {
             var repository = new PersonRepository();
@@ -75,7 +55,7 @@ namespace Controllers
         } 
 
           [HttpGet]
-        [Route("EJERCICIO 4")]
+        [Route("EJERCICIO_4")]
         public IActionResult GetByRangeAge(int Edad1, int Edad2)
         {
             var repository = new PersonRepository();
@@ -85,7 +65,7 @@ namespace Controllers
 
 
         [HttpGet]
-        [Route("Ejercicio 5")]
+        [Route("Ejercicio_5")]
         public IActionResult GetJobs()
         {
             var repository = new PersonRepository();
@@ -94,7 +74,7 @@ namespace Controllers
         } 
 
         [HttpGet]
-        [Route("EJERCICIO 6")]
+        [Route("EJERCICIO_6")]
         public IActionResult GetContains(string ParteNombre)
         {
             var repository = new PersonRepository();
@@ -104,7 +84,7 @@ namespace Controllers
 
 
         [HttpGet]
-        [Route("EJERCICIO 7")]
+        [Route("EJERCICIO_7")]
         public IActionResult GetByAger(int Edad1, int Edad2, int Edad3)
         {
             var repository = new PersonRepository();
@@ -113,7 +93,7 @@ namespace Controllers
         }
 
         [HttpGet]
-        [Route("EJERCICIO 8")]
+        [Route("EJERCICIO_8")]
         public IActionResult GetByMaxAge(int Edad)
         {
             var repository = new PersonRepository();
@@ -122,7 +102,7 @@ namespace Controllers
         }   
 
         [HttpGet]
-        [Route("EJERCICIO 9")]
+        [Route("EJERCICIO_9")]
         public IActionResult GetPersonsOrdered(int edad)
         {
             var repository = new PersonRepository();
@@ -131,7 +111,7 @@ namespace Controllers
         }
 
           [HttpGet]
-        [Route("EJERCICIO 10")]
+        [Route("EJERCICIO_10")]
         public IActionResult GetPersonsOrderedDesc(int EdadMax, int EdadMin)
         {
             var repository = new PersonRepository();
@@ -140,7 +120,7 @@ namespace Controllers
         }
 
         [HttpGet]
-        [Route("EJERCICIO 11")]
+        [Route("EJERCICIO_11")]
         public IActionResult CountPerson(char gender)
         {
             var repository = new PersonRepository();
@@ -151,7 +131,7 @@ namespace Controllers
         }
 
         [HttpGet]
-        [Route("EJERCICIO 12")]
+        [Route("EJERCICIO_12")]
         public IActionResult ExistPerson(string Apellido)
         {
             var repository = new PersonRepository();
@@ -160,7 +140,7 @@ namespace Controllers
         }
 
         [HttpGet]
-        [Route("EJERCICIO 13")]
+        [Route("EJERCICIO_13")]
         public IActionResult GetPerson(string job, int Age)
         {
             var repository = new PersonRepository();
@@ -169,7 +149,7 @@ namespace Controllers
         }
 
          [HttpGet]
-        [Route("EJERCICIO 14")]
+        [Route("EJERCICIO_14")]
         public IActionResult TakePerson(string job)
         {
             var repository = new PersonRepository();
@@ -178,7 +158,7 @@ namespace Controllers
         }
         
          [HttpGet]
-        [Route("EJERCICIO 15")]
+        [Route("EJERCICIO_15")]
         public IActionResult SkipPerson(string job)
         {
             var repository = new PersonRepository();
@@ -187,21 +167,13 @@ namespace Controllers
         }
 
         [HttpGet]
-        [Route("EJERCICIO 16")]
+        [Route("EJERCICIO_16")]
         public IActionResult SkipTakePerson(string job)
         {
             var repository = new PersonRepository();
             var persons = repository.SkipTakePerson(job);
             return Ok(persons);
         }
-
-
-    
-    
-        
-
-
-
 
     }
 }
